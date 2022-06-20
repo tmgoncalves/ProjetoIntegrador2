@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.home,
+.services,
+.recicly,
+.sign-up,
+.login,
+.card1,
+.card2,
+.card3,
+.card4,
+.card5{
+  display: flex;
+  height: 90vh;
+  align-items: stretch;
+  justify-content: left top;
+  font-size: 2rem;
+}
+
+.services {
+  background-image: url('/images/img-services.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.recicly {
+  background-image: url('/images/img-recicly.jpg');
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.sign-up {
+ /* background-image: url('/images/img-8.jpg'); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  font-size: 4;
+}
+
+.login {
+  /* background-image: url('/images/img-8.jpg'); */
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: black;
+   font-size: 4;
+ }
+
+.card1 {
+  background-image: url('/images/img-9.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+.card2 {
+  background-image: url('/images/img-2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+.card3 {
+  background-image: url('/images/img-3.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+.card4 {
+  background-image: url('/images/img-4.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+.card5 {
+  background-image: url('/images/img-8.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.message {
+  color: red;
+  font-size : 0.7em;
+}
