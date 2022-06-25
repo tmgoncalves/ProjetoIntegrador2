@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
 import axios from 'axios';
 import { setUserSession } from '../../service/AuthService'
+import './Login.css';
 const loginAPIUrl = 'https://84jbs45w8h.execute-api.us-east-1.amazonaws.com/prod/login'
 
 const Login = (props) => {
@@ -11,7 +12,18 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    if (username.trim() === '' || password.trim() === '') {
+
+    if (username.trim() === '') {
+      setErrorMessage('Necessário colocar username');
+      return;
+    }
+    
+    if (password.trim() === '') {
+      setErrorMessage('Necessário colocar password');
+      return;
+    }
+
+    if (username.trim() === '' && password.trim() === '') {
       setErrorMessage('Necessário colocar username e password');
       return;
     }
@@ -39,14 +51,17 @@ const Login = (props) => {
   }
 
   return (
-    <div>
+    <div className='container-login'>
       <form onSubmit={submitHandler}>
-        <h5>Login</h5>
-        username: <input type="text" value={username} onChange={event => setUsername(event.target.value)} /> <br/>
-        password: <input type="password" value={password} onChange={event => setPassword(event.target.value)} /> <br/>
-        <input type="submit" value="Login" />
+        <h2>Efetuar Login</h2>
+        <br />
+        <input type="text" placeholder='Username' className='input' value={username} onChange={event => setUsername(event.target.value)} /> <br />
+        <input type="password" placeholder='Password' className='input' value={password} onChange={event => setPassword(event.target.value)} /> <br />
+
+        {errorMessage && <p className="message">{errorMessage}</p>}
+        <br />
+        <input type="submit" value="Login" className='btn--outline btn-login' />
       </form>
-      {errorMessage && <p className="message">{errorMessage}</p>}
     </div>
   )
 }

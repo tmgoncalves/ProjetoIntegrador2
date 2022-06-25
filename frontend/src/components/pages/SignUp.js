@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../../App.css';
+import './SignUp.css';
 
 const registerUrl = 'https://84jbs45w8h.execute-api.us-east-1.amazonaws.com/prod/register'
 
@@ -14,7 +15,7 @@ const SignUp = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     if (username.trim() === '' || email.trim() === '' || name.trim() === '' || password.trim() === '') {
-      setMessage('Necessário preencher todos os campos !');
+      setMessage('Todos os campos são obrigatórios.');
       return;
     }
     setMessage(null);
@@ -41,16 +42,20 @@ const SignUp = () => {
   }
 
   return (
-    <div>
+    <div className='container-sign-up'>
       <form onSubmit={submitHandler}>
-        <h5>Register</h5>
-        name: <input type="text" value={name} onChange={event => setName(event.target.value)} /> <br/>
-        email: <input type="text" value={email} onChange={event => setEmail(event.target.value)} /> <br/>
-        username: <input type="text" value={username} onChange={event => setUsername(event.target.value)} /> <br/>
-        password: <input type="text" value={password} onChange={event => setPassword(event.target.value)} /> <br/>
-        <input type="submit" value="Register" />
+        <h2>Register</h2>
+        <br />
+        <input type="text" className='input' placeholder='Name' value={name} onChange={event => setName(event.target.value)} /> <br />
+        <input type="text" className='input' placeholder='E-mail' value={email} onChange={event => setEmail(event.target.value)} /> <br />
+        <input type="text" className='input' placeholder='Username' value={username} onChange={event => setUsername(event.target.value)} /> <br />
+        <input type="text" className='input' placeholder='Password' value={password} onChange={event => setPassword(event.target.value)} /> <br />
+
+        {message && <p className="message">{message}</p>}
+        <br />
+        <input type="submit" value="Register" className='btn--outline btn-register' />
       </form>
-      {message && <p className="message">{message}</p>}
+
     </div>
   )
 }

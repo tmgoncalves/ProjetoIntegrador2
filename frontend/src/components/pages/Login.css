@@ -1,0 +1,45 @@
+h2 {
+    color: #fff;
+}
+
+.container-login {
+    overflow: hidden;
+    padding: 4rem 0 2rem 0;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, rgb(100, 235, 100) 0%, rgb(26, 23, 23) 100%);
+    height: calc(100vh - 80px);
+}
+
+.input {
+    padding-left: 8px;
+    border-radius: 2px;
+    margin-right: 10px;
+    outline: none;
+    font-size: 18px;
+    margin-bottom: 16px;
+    border: 1px solid rgb(177, 172, 172);
+    align-items: center;
+}
+
+.btn-login {
+    cursor: pointer;
+}
+
+.message {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+
+@media (max-width: 970px) {
+    .container-login {
+        height: 99vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .container-login {
+        height: 90vh;
+    }
+}
